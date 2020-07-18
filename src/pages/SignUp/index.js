@@ -1,16 +1,20 @@
-import React,{useCallback} from 'react';
+import React,{useCallback , useState} from 'react';
 import './index.css';
 import { withRouter } from 'react-router';
 import SignUpForm from '../../components/signUpForm';
 import base from '../../firebaseInit';
 
 function SignUp({history}) {
+    const [error, setError] = useState('');
     const _onSignUp = useCallback(async ({ email, password }) => {
         try {
             await base.auth().createUserWithEmailAndPassword(
                 email,
                 password
-            ).then(() => {
+            ).catch((err)=> {
+                setError(err.message)
+            })
+            .then(() => {
                 history.push('/');
             });
         } catch(err) {
@@ -19,7 +23,11 @@ function SignUp({history}) {
 }, [history]);
 
     return (
-        <div className='loginWrapper'>
+        <React.Fragment>
+            {error &&  <div className='errorText'>
+                {error}
+            </div>}
+            <div className='loginWrapper'>
             <div className='loginScreen'>
                 <div className='loginContainer'>
                     <div className='logoPanel'>
@@ -30,6 +38,8 @@ function SignUp({history}) {
                 </div>
             </div>
         </div>
+        </React.Fragment>
+        
     )
 }
 export default withRouter(SignUp);

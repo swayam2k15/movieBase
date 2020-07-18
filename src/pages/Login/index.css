@@ -11,6 +11,22 @@
 .loginButton.inputBox:hover {
     background-color: mediumseagreen;
 }
+.invalid {
+    color: red;
+    font-size: 11px;
+    padding-left: 35px;
+    margin-top: -10px;
+}
+.errorText {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    width: 300px;
+}
 .loginWrapper {
     background-image: linear-gradient(to top right, blue, purple 60%);
 }
