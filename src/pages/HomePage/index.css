@@ -1,43 +1,46 @@
 .loginButton.inputBox.signOut {
     background-color: red;
-    width: 200px;
-    float: right;
+    width: 145px;
     position: absolute;
-    top: 25px;
+    top: 0;
     right: 25px;
     font-weight: 900;
-    font-size: 15px;
+    font-size: 12px;
+    height: 40px;
 }
 .loginButton.inputBox.signOut:hover {
-    background-color: mediumblue;
-}
-.headerContainer {
-    position: relative;
+    background-color: maroon;
 }
 .thumbnail {
     border-radius: 5px;
+}
+.movieListContainer {
+    padding-top: 70px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.moviesWrapper {
+    margin-right: 20px;
+}
+.movieListWrapper h2 {
+    padding: 18px 20px 0 30px;
+    font-size: 26px;
+    color: #fff;
 }
 .moviesList {
     padding: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-}
-.movieHeader {
-    background-color: maroon;
-    /* height: 180px; */
-    color: white;
-    font-size: 70px;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    letter-spacing: 2px;
-
+    justify-content: space-between;
+    overflow-x: scroll;
 }
 .imageContainer:hover {
     transform: scale(1.1);
-    transition: transform 1s;
+    transition: all 1s;
     box-shadow: 0 10px 10px rgba(0,0,0,0.7);
+}
+.imageContainer:hover .infoContainer {
+    height: 100%;
+
 }
 .imageContainer{
     transform: scale(1);
@@ -52,9 +55,10 @@
     color: wheat;
     background: rgba(0,0,0,0.4);
     box-shadow: 0 0 7px rgba(0,0,0,0.7);
+    height: 60px;
+    overflow: hidden;
+    transition: all 1s;
 }
-
-
-
-
-
+.infoContainer p {
+    margin-bottom: 20px;
+}

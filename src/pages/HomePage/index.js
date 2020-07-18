@@ -1,16 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
-import base from '../../firebaseInit';
-import MoviesList from '../../components/moviesItem';
+import MoviesList from '../../components/movieList';
 import {get} from '../../helpers/api';
+import Header from '../../components/header';
 
 function Home () {
     const [moviesData, setMoviesData] = useState([]);
-    const _onSignOut = useCallback(() => {
-        base.auth().signOut();
-    },[])
     useEffect( ()=> {
-        get('https://api.jsonbin.io/b/5f130ef99180616628441277').then((response)=> {
+        get('https://api.jsonbin.io/b/5f132c64c58dc34bf5d5eb09').then((response)=> {
             setMoviesData(response.data);            
         })
         
@@ -18,16 +15,15 @@ function Home () {
 
     return (
         <React.Fragment>
-        <div>
-            <div className='headerContainer'>
-            <header className='movieHeader'>Movies List</header>
-            <button className='signOut loginButton inputBox ' onClick={ _onSignOut}>Sign Out</button>
-            </div>
-            
-        </div>
-        <div className='moviesList'>
-            <MoviesList/>
-        </div>
+                <Header />
+                <div className="movieListContainer">
+                    {moviesData.map(({ genre, list }) => (
+                        <div className="movieListWrapper">
+                            <h2>{genre}</h2>
+                            <MoviesList list={list} />
+                        </div>
+                    ))}
+                </div>
         </React.Fragment>
     )
 }

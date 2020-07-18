@@ -1,0 +1,16 @@
+.headerContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #383131;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+.movieHeader {
+    /* height: 180px; */
+    color: white;
+    font-size: 70px;
+    padding: 20px;
+    letter-spacing: 2px;
+    font-size: 26px;
+}

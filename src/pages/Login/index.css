@@ -12,7 +12,7 @@
     background-color: mediumseagreen;
 }
 .loginWrapper {
-    background-color: purple;
+    background-image: linear-gradient(to top right, blue, purple 60%);
 }
 
 

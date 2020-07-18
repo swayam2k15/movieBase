@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 function LoginForm({ onLogin }) {
     const [email, setEmail] = useState('');
@@ -15,11 +15,6 @@ function LoginForm({ onLogin }) {
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="inputBoxPadding inputBox" placeholder="Password" ></input>
                 </div>
                 <button  onClick={() => onLogin({ email, password })} disabled={!(email.length > 0 && password.length > 0)} type="submit" className="loginButton inputBox">Login</button>
-                <p className="forgotPassword text-right">
-                    Forgot <a href="#">Username / Password?</a>
-                </p>
-
-
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Home from './pages/HomePage';
@@ -20,7 +19,7 @@ function App() {
           <Switch>
             <Route path="/login" component={Login}/>
             <Route path='/signUp' component={SignUp}/>
-            <Route path='/' component= {Home} />
+            <PrivateRoute path='/' component= {Home} />
           </Switch>
         </Router>
       </AuthProvider>
