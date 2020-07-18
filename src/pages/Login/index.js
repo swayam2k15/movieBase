@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './index.css';
-// import loginLogo from '../../assets/loginLogo'
+import LoginForm from '../../components/loginForm';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import base from '../../firebaseInit';
 
-export default function Login() {
+function Login({history}) {
+    const _onLogin = useCallback(async ({ email, password }) => {
+        try {
+            await base.auth().signInWithEmailAndPassword(email, password);
+            history.push('/');
+        } catch(err) {
+            console.log(err);
+        }
+    }, [history]);
     return (
         <div className='loginWrapper'>
             <div className='loginScreen'>
-                <div className='logoPanel'>
-                    {/* <img className='loginImage' src={loginLogo}></img> */}
+                <div className='loginContainer'>
+                    <div className='logoPanel'>
+                    </div>
+                    <div>
+                        <LoginForm onLogin={_onLogin}/>
+                        <div className='linkAccount'>
+                            <Link  to="/signup">Create Your Account</Link>
+                        </div>
+                    </div>
                 </div>
-            <form>
-                <h3>Member Login</h3>
-                <div className="form-group">
-                    <input type="email" className="inputBoxPadding inputBox" placeholder=" Email" ></input>
-                </div>
-                <div className="form-group">
-                    <input type="password" className="inputBoxPadding inputBox" placeholder="Password" ></input>
-                </div>
-                <button type="submit" className="loginButton inputBox">Login</button>
-                <p className="forgot-password text-right">
-                    Forgot <a href="#">Username / Password?</a>
-                </p>
-            </form>
-
-                
             </div>
         </div>
     )
 }
+
+export default withRouter(Login);
