@@ -8,9 +8,18 @@ function Home () {
     },[])
 
     return (
+        <React.Fragment>
         <div>
-            <button className='signOut' onClick={ _onSignOut}>Sign Out</button>
+            <div className='headerContainer'>
+            <header className='movieHeader'>Movies List</header>
+            <button className='signOut loginButton inputBox ' onClick={ _onSignOut}>Sign Out</button>
+            </div>
+            
         </div>
+        <div className='moviesList'>
+            Movies Array
+        </div>
+        </React.Fragment>
     )
 }
 

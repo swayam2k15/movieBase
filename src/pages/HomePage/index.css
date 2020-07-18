@@ -1,0 +1,27 @@
+.loginButton.inputBox.signOut {
+    background-color: red;
+    width: 200px;
+    float: right;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-weight: 900;
+    font-size: 15px;
+}
+.loginButton.inputBox.signOut:hover {
+    background-color: mediumblue;
+}
+.headerContainer {
+    position: relative;
+}
+.movieHeader {
+    background-color: maroon;
+    /* height: 180px; */
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    letter-spacing: 2px;
+
+}
