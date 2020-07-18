@@ -1,0 +1,67 @@
+/* Common styles */
+.loginButton.inputBox {
+    background-color: green;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.loginWrapper {
+    background-color: purple;
+}
+
+/* Mobile Styles===== */
+@media (max-width: 768px) {
+    .loginWrapper {
+        /* position: relative;
+        height: auto;
+        width: 1200px; */
+    }
+    .loginScreen {
+        background: lightblue;
+        height: 50%;
+        width: 50%;
+        margin: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-radius: 6px;
+    }
+  }
+
+/* Large and Extra Large Screen styles=== */
+  @media (min-width: 1024px) {
+    .loginWrapper {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    }
+    .loginScreen {
+        background: wheat;
+        height: 65%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        justify-content: flex-end;
+    }
+    .inputBox {
+        height: 35px;
+        margin: 15px;
+        width: 285px;
+        border-radius: 50px;
+        outline: none;
+        background: lightgray;
+        opacity: 0.7;
+        border: 0;
+        padding: 0;
+    }
+    input.inputBox::placeholder {
+        color: black;
+        padding-left: 20px;
+      }
+      .logoPanel {
+          background: '';
+      }
+}
